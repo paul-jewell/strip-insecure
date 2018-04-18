@@ -8,10 +8,9 @@
 #        The default file of repositories.xml will be selected if called
 #        without a parameter
 #
-# Paul Jewell <paul@teulu.org>
+# Copyright 2018 Paul Jewell <paul@teulu.org>
 #
-# Copyright 2018 Gentoo Foundation
-# Distributed under the terms of the GNU GPL version 2 or later
+#  Distributed under the terms of the GNU GPL version 3 or later
 
 try:
     from lxml import etree
@@ -21,11 +20,7 @@ import sys
 from sys import argv
 
 # Process the command line
-
-if len(argv) == 1:
-    repositoryFile = 'repositories.xml'
-else:
-    repositoryFile = argv[1]
+repositoryFile = argv[1]
 
 OutputFile = "repositories-secure.xml"    
 RepositoryList = etree.parse(repositoryFile)
